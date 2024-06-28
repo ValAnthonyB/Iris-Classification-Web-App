@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Iris Classifier</title>
+</head>
+<body>
+    <h1>Iris Classifier</h1>
+    <form id="predict-form">
+        <label for="sepal-length">Sepal Length:</label>
+        <input type="number" id="sepal-length" name="sepal-length" step="0.01"><br><br>
+        
+        <label for="sepal-width">Sepal Width:</label>
+        <input type="number" id="sepal-width" name="sepal-width" step="0.01"><br><br>
+        
+        <label for="petal-length">Petal Length:</label>
+        <input type="number" id="petal-length" name="petal-length" step="0.01"><br><br>
+        
+        <label for="petal-width">Petal Width:</label>
+        <input type="number" id="petal-width" name="petal-width" step="0.01"><br><br>
+        
+        <button type="button" onclick="predict()">Predict</button>
+    </form>
+    
+    <h2 id="prediction-result"></h2>
+    
+    <!--
+    <script>
+        async function predict() {
+            const sepalLength = document.getElementById('sepal-length').value;
+            const sepalWidth = document.getElementById('sepal-width').value;
+            const petalLength = document.getElementById('petal-length').value;
+            const petalWidth = document.getElementById('petal-width').value;
+            
+            const response = await fetch('/predict', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    features: [parseFloat(sepalLength), parseFloat(sepalWidth), parseFloat(petalLength), parseFloat(petalWidth)]
+                })
+            });
+            
+            const data = await response.json();
+            
+            if (data.error) {
+                document.getElementById('prediction-result').textContent = `Error: ${data.error}`;
+            } else {
+                document.getElementById('prediction-result').textContent = `Prediction: ${data.prediction}`;
+            }
+        }
+    </script>
+    -->
+</body>
+</html>
